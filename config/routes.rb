@@ -1,4 +1,7 @@
 Mapper::Application.routes.draw do
+  get "locations/new"
+  get "google_map" => "google_map#index" 
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
