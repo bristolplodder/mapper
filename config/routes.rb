@@ -1,6 +1,9 @@
 Mapper::Application.routes.draw do
+  get "electric/new"
+
   get "locations/new"
-  get "google_map" => "google_map#index" 
+  get "google_map" => "google_map#index"
+  get "electric" => "google_map#electric"
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

@@ -1,0 +1,29 @@
+function initialize() {
+var mapOptions = {
+zoom: <%= @zoom %>, 
+mapTypeId: google.maps.MapTypeId.ROAD, 
+center: your_city 
+};
+map = new google.maps.Map(document.getElementById("map_canvas"),
+mapOptions);
+
+
+
+marker1 = new google.maps.Marker({
+map:map,
+draggable:false,
+animation: google.maps.Animation.DROP,
+position: your_place
+});
+google.maps.event.addListener(marker1, 'click', toggleBounce);
+google.maps.event.addListener(marker2, 'click', toggleBounce);
+
+
+
+function toggleBounce() {
+ if (marker1.getAnimation() != null) {
+ marker1.setAnimation(null);
+ } else {
+ marker1.setAnimation(google.maps.Animation.BOUNCE);
+ }
+}
